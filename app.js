@@ -19,7 +19,7 @@ amqp.connect(url, function (error0, connect) {
 
         channel.consume(queue, function (msg) {
             const json = JSON.parse(msg.content.toString());
-            console.log(json);
+            console.dir(json, {depth: null, colors: true});
         }, {
             noAck: true
         });
